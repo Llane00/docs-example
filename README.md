@@ -1,3 +1,3 @@
 # Home page
 
-> An awesome project.
+> Edit a example.
