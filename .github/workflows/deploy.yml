@@ -10,8 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0 # 获取所有历史记录，以便正确推送
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        personal_token: ${{ secrets.PAT }}  # 使用我们刚刚创建的PAT
         publish_dir: .  # 部署整个仓库内容
+        force_orphan: true  # 强制创建新的 gh-pages 分支
