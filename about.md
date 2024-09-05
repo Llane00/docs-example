@@ -1,3 +1,1 @@
-# About
-
-> An awesome project.
+# About Us
