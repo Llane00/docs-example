@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Docs Website</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -24,6 +24,7 @@
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
+      homepage: 'home.md',
       plugins: [
         EditOnGithubPlugin.create(
           'https://github.com/Llane00/docs-example/blob/main/',
@@ -31,30 +32,6 @@
           'Edit on GitHub'
         )
       ]
-    }
-
-    function editWithStackEdit() {
-      const stackedit = new Stackedit();
-
-      // 获取当前文档的路径
-      const path = location.hash.slice(1);
-
-      // 打开 StackEdit
-      stackedit.openFile({
-        name: path,
-        content: {
-          text: Docsify.dom.find('.markdown-section').textContent // 获取当前文档内容
-        }
-      });
-
-      // 监听文件变化
-      stackedit.on('fileChange', (file) => {
-        // 更新文档内容
-        Docsify.dom.find('.markdown-section').innerHTML = file.content.html;
-
-        // 如果你想保存更改，你需要实现一个保存函数
-        // saveChanges(path, file.content.text);
-      });
     }
   </script>
   <!-- Docsify v4 -->
