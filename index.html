@@ -18,13 +18,19 @@
       name: 'Docs',
       // repo: '',
       loadSidebar: '_sidebar.md',
-      subMaxLevel: 2,
+      subMaxLevel: 3,
       sidebarCollapsible: true,
       auto2top: true,
+      homepage: 'home.md',
       alias: {
         '/.*/_sidebar.md': '/_sidebar.md'
       },
-      homepage: 'home.md',
+      search: {
+        paths: 'auto',
+        placeholder: 'Search',
+        noData: 'Not Found',
+        depth: 3,
+      },
       plugins: [
         EditOnGithubPlugin.create(
           'https://github.com/Llane00/docs-example/blob/main/',
@@ -36,6 +42,7 @@
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 
 </html>
