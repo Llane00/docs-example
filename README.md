@@ -1,3 +1,3 @@
-# Home page
+# Home
 
-> Edit a example.
+Hello world
